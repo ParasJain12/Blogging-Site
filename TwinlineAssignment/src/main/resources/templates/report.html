@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Report</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" href="../static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Top 5 Most Frequent Words in Your Blogs</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="entry : ${report}">
+                    <td th:text="${entry.key}"></td>
+                    <td th:text="${entry.value}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/blogs/dashboard" class="btn">Back to Dashboard</a>
+    </div>
+</body>
+</html>
